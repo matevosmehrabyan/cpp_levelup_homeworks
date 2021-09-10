@@ -8,7 +8,8 @@ int main() {
     int fd = open("stdout", O_CREAT | O_WRONLY);
 
     if (fd < 0) {
-        std::cout << "Failed to open file." << std::endl;
+        std::cerr << "Failed to open file." << std::endl;
+        exit(1);
     }
 
     std::cout << "Hello World!" << std::endl;
