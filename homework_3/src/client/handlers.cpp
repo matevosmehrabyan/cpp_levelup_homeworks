@@ -1,11 +1,15 @@
-void say_hello(std::string name) {
+#include <iostream>
+#include "handlers.h"
+
+
+void sayHello(std::string name) {
     std::cout << "Hello " << name << std::endl;
 }
 
-void say_bye(std::string name) {
+void sayBye(std::string name) {
     std::cout << "Bye " << name << std::endl;
 }
 
-void log_error(std::string error_message) {
+void logError(std::string error_message) {
     std::cout << "Error: " << error_message << std::endl;
 }

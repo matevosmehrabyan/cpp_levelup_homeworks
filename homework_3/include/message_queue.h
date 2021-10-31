@@ -5,17 +5,20 @@
 #include <queue>
 #include <pthread.h>
 
+#include "report_handler.h"
 #include "common.h"
 
 
-class MessageQueue {
+class MessageQueue: public ReportHandler {
 public:
-
-    void AddMessage(std::string);
-    void RegisterHandler(void (*handler)(std::string));
+    void addMessage(const std::string);
+    void registerHandler(void (*handler)(std::string));
+    void reportMessages();
+    MessageQueue();
+    ~MessageQueue();
 
 private:
-    std::queue<void (*)(std::string)> handlers;
+    std::vector<void (*)(std::string)> handlers;
     std::queue<std::string> messages;
 
     pthread_mutex_t handler_mutex;

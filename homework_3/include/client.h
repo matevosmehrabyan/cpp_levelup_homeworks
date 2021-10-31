@@ -2,16 +2,19 @@
 #define CLIENT_H
 
 #include <pthread.h>
+#include <set>
 #include "common.h"
+
 
 class Client {
 private:
-    pthread_t runner;
-    std::vector<handler> handlers;
+    std::set<handler> callback_functions;
 
 public:
     Client();
-};
+    void addCallback(const handler func);
+    std::set<handler>* getCallbacks();
 
+};
 
 #endif

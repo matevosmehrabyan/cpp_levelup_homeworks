@@ -1,6 +1,10 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-typedef typename void (*)(std::string) handler;
+#include <string>
+
+
+typedef void (*handler)(std::string);
+typedef void (*thread_func)(void*);
 
 #endif
