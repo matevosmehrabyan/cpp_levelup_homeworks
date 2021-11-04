@@ -4,8 +4,8 @@
 #include <string>
 
 
-void sayHello(std::string name);
-void sayBye(std::string name);
-void logError(std::string error_message);
+void* sayHello(void* ptr);
+void* sayBye(void* ptr);
+void* logError(void* ptr);
 
 #endif

@@ -3,11 +3,13 @@
 
 #include <string>
 
+#include "common.h"
+
 
 class ReportHandler {
 public:
     virtual void addMessage(std::string)=0;
-    virtual void registerHandler(void (*handler)(std::string))=0;
+    virtual void registerHandler(thread_func handler)=0;
     virtual void reportMessages()=0;
 };
 

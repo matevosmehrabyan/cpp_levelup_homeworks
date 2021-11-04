@@ -2,14 +2,17 @@
 #include "handlers.h"
 
 
-void sayHello(std::string name) {
-    std::cout << "Hello " << name << std::endl;
+void* sayHello(void* ptr) {
+    std::string* name = static_cast<std::string*>(ptr);
+    std::cout << "Hello " << *name << std::endl;
 }
 
-void sayBye(std::string name) {
-    std::cout << "Bye " << name << std::endl;
+void* sayBye(void* ptr) {
+    std::string* name = static_cast<std::string*>(ptr);
+    std::cout << "Bye " << *name << std::endl;
 }
 
-void logError(std::string error_message) {
-    std::cout << "Error: " << error_message << std::endl;
+void* logError(void* ptr) {
+    std::string* error_message = static_cast<std::string*>(ptr);
+    std::cout << "Error: " << *error_message << std::endl;
 }

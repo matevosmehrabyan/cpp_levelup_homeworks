@@ -8,12 +8,12 @@
 
 class Client {
 private:
-    std::set<handler> callback_functions;
+    std::set<thread_func> callback_functions;
 
 public:
     Client();
-    void addCallback(const handler func);
-    std::set<handler>* getCallbacks();
+    void addCallback(const thread_func func);
+    std::set<thread_func>* getCallbacks();
 
 };
 

@@ -5,6 +5,6 @@
 
 
 typedef void (*handler)(std::string);
-typedef void (*thread_func)(void*);
+typedef void* (*thread_func)(void*);
 
 #endif
