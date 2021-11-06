@@ -8,7 +8,7 @@ Task::Task(task_func func, void *arg) {
     this->arg = arg;
 }
 
-Task::Task(Task& task) {
+Task::Task(const Task& task) {
     pthread_mutex_init(&this->status_mutex, NULL);
     this->status = INITIAL;
     this->runner = task.runner;
@@ -36,6 +36,6 @@ task_func Task::getRunner() {
     return this->runner;
 }
 
-const void* Task::getArg() {
+void* Task::getArg() {
     return this->arg;
 }

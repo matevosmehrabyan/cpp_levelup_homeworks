@@ -15,14 +15,14 @@ enum TaskStatus {
 class Task {
 public:
     Task(task_func func, void* arg);
-    Task(Task& tast);
+    Task(const Task& tast);
     ~Task();
 
     TaskStatus getStatus();
     void setStatus(TaskStatus s);
 
     task_func getRunner();
-    const void* getArg();
+    void* getArg();
 
 private:
     task_func runner;
