@@ -55,7 +55,7 @@ ThreadPool::~ThreadPool() {
     pthread_mutex_lock(&this->thread_data->task_mutex);
     this->thread_data->must_stop = true;
     pthread_mutex_unlock(&this->thread_data->task_mutex);
-    pthread_cond_signal(&this->thread_data->thread_cond);
+    pthread_cond_broadcast(&this->thread_data->thread_cond);
 
     for (pthread_t& thread : this->threads) {
         pthread_join(thread, NULL);

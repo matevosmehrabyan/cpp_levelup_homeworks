@@ -7,5 +7,7 @@
 void* sayHello(void* ptr);
 void* sayBye(void* ptr);
 void* logError(void* ptr);
+void* printSquare(void* ptr);
+void* calcFibonacci(void* ptr);
 
 #endif
