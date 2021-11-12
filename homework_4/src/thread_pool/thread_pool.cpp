@@ -11,6 +11,7 @@ void* taskRunner(void* arg){
             pthread_cond_wait(&thread_data->thread_cond, &thread_data->task_mutex);
 
             if (thread_data->must_stop) {
+                pthread_mutex_unlock(&thread_data->task_mutex);
                 return nullptr;
             }
         }
