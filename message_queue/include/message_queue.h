@@ -13,13 +13,13 @@
 class MessageQueue: public ReportHandler {
 public:
     void addMessage(const std::string);
-    void registerHandler(thread_func handler);
+    void registerHandler(Handler handler);
     void reportMessages();
     MessageQueue();
     ~MessageQueue();
 
 private:
-    std::vector<thread_func> handlers;
+    std::vector<Handler> handlers;
     std::queue<std::string> messages;
     std::vector<pthread_t*> handler_threads;
     std::vector<std::string*> handler_messages;

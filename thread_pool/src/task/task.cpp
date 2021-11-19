@@ -1,7 +1,7 @@
 #include "task.h"
 
 
-Task::Task(task_func func, void *arg) {
+Task::Task(Handler func, void *arg) {
     pthread_mutex_init(&this->status_mutex, NULL);
     this->status = INITIAL;
     this->runner = func;
@@ -32,7 +32,7 @@ void Task::setStatus(TaskStatus s) {
     pthread_mutex_unlock(&this->status_mutex);
 }
 
-task_func Task::getRunner() {
+Handler Task::getRunner() {
     return this->runner;
 }
 

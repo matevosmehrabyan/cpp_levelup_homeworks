@@ -11,4 +11,4 @@ add_executable(message_queue ${PROJECT_SOURCE_DIR}/src/main.cpp
 
 target_include_directories(message_queue PUBLIC
                            "${PROJECT_SOURCE_DIR}/include"
-			   "${PROJECT_SOURCE_DIR}/../common/include")
+                           "${PROJECT_SOURCE_DIR}/../common/include")

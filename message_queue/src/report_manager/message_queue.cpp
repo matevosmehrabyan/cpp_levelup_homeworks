@@ -7,7 +7,7 @@ void MessageQueue::addMessage(const std::string message) {
     pthread_mutex_unlock(&this->message_mutex);
 }
 
-void MessageQueue::registerHandler(thread_func handler) {
+void MessageQueue::registerHandler(Handler handler) {
     pthread_mutex_lock(&this->handler_mutex);
     this->handlers.push_back(handler);
     pthread_mutex_unlock(&this->handler_mutex);
@@ -15,7 +15,7 @@ void MessageQueue::registerHandler(thread_func handler) {
 
 void MessageQueue::reportMessages() {
     pthread_mutex_lock(&this->handler_mutex);
-    std::vector<thread_func> current_handlers(this->handlers);
+    std::vector<Handler> current_handlers(this->handlers);
     pthread_mutex_unlock(&this->handler_mutex);
 
     while (!this->messages.empty()) {

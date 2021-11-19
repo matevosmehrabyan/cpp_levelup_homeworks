@@ -14,18 +14,18 @@ enum TaskStatus {
 
 class Task {
 public:
-    Task(task_func func, void* arg);
+    Task(Handler func, void* arg);
     Task(const Task& tast);
     ~Task();
 
     TaskStatus getStatus();
     void setStatus(TaskStatus s);
 
-    task_func getRunner();
+    Handler getRunner();
     void* getArg();
 
 private:
-    task_func runner;
+    Handler runner;
     void* arg;
 
     TaskStatus status;

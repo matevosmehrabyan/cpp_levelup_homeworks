@@ -3,10 +3,10 @@
 
 Client::Client() {};
 
-void Client::addCallback(const thread_func func) {
+void Client::addCallback(const Handler func) {
     callback_functions.insert(func);
 }
 
-std::set<thread_func>* Client::getCallbacks() {
+std::set<Handler>* Client::getCallbacks() {
     return &this->callback_functions;
 }
