@@ -22,7 +22,3 @@ void ReportManager::addClient(Client* client) {
 void ReportManager::send(std::string* msg) {
     this->report_handler->addMessage(*msg);
 }
-
-void ReportManager::report() {
-    this->report_handler->reportMessages();
-}

@@ -9,6 +9,9 @@ add_executable(message_queue ${PROJECT_SOURCE_DIR}/src/main.cpp
                              ${PROJECT_SOURCE_DIR}/src/client/client.cpp
                              ${PROJECT_SOURCE_DIR}/../common/src/handlers.cpp)
 
+target_link_libraries(message_queue PUBLIC "${PROJECT_SOURCE_DIR}/../thread_pool/libthreadpool.so")
+
 target_include_directories(message_queue PUBLIC
                            "${PROJECT_SOURCE_DIR}/include"
+                           "${PROJECT_SOURCE_DIR}/../thread_pool/include"
                            "${PROJECT_SOURCE_DIR}/../common/include")

@@ -4,24 +4,27 @@
 #include <pthread.h>
 #include <string>
 #include <vector>
-#include <queue>
+#include <stack>
 
 #include "report_handler.h"
+#include "thread_pool.h"
 #include "common.h"
+
+
+#define THREADS_COUNT 2
 
 
 class MessageQueue: public ReportHandler {
 public:
     void addMessage(const std::string);
     void registerHandler(Handler handler);
-    void reportMessages();
     MessageQueue();
     ~MessageQueue();
 
 private:
+    ThreadPool pool;
     std::vector<Handler> handlers;
-    std::queue<std::string> messages;
-    std::vector<pthread_t*> handler_threads;
+    std::stack<std::string> messages;
     std::vector<std::string*> handler_messages;
 
     pthread_mutex_t handler_mutex;

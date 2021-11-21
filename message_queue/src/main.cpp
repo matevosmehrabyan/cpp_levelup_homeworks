@@ -27,6 +27,7 @@ void* firstClient(void* ptr) {
     reportManager->send(&message_2);
 
     sleep(30);
+    return nullptr;
 }
 
 void* secondClient(void* ptr) {
@@ -45,6 +46,7 @@ void* secondClient(void* ptr) {
     reportManager->send(&message_2);
 
     sleep(30);
+    return nullptr;
 }
 
 int main () {
@@ -71,15 +73,10 @@ int main () {
     std::string message = "Main message";
     report_manager.send(&message);
 
-    int iterations_count = 5;
-    for (int i = 0; i < iterations_count; i++) {
-        std::cout << "--------------------------" << std::endl;
-        sleep(10);
-        report_manager.report();
-    }
-
     pthread_join(first_thread, NULL);
     pthread_join(second_thread, NULL);
+
+    sleep(5);
 
     return 0;
 }

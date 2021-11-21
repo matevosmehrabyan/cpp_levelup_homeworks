@@ -2,6 +2,12 @@
 
 Sources can be used in projects where it is needed.
 
+# Dependencies
+
+1) Make
+2) CMake
+3) g++
+
 ## Build
 
 The thread pool will be built as library to use in various projects. A simple use case was added for demonstrating the usage of thread pool.
