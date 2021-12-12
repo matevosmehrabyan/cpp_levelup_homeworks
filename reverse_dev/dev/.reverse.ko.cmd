@@ -1,0 +1,1 @@
+cmd_/home/matos/cpp_levelup_homeworks/reverse_dev/dev/reverse.ko := ld -r -m elf_x86_64  --build-id=sha1  -T scripts/module.lds -o /home/matos/cpp_levelup_homeworks/reverse_dev/dev/reverse.ko /home/matos/cpp_levelup_homeworks/reverse_dev/dev/reverse.o /home/matos/cpp_levelup_homeworks/reverse_dev/dev/reverse.mod.o;  true

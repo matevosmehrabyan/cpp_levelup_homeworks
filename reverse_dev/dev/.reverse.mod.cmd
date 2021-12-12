@@ -1,0 +1,1 @@
+cmd_/home/matos/cpp_levelup_homeworks/reverse_dev/dev/reverse.mod := { echo  /home/matos/cpp_levelup_homeworks/reverse_dev/dev/reverse.o;  echo; } > /home/matos/cpp_levelup_homeworks/reverse_dev/dev/reverse.mod

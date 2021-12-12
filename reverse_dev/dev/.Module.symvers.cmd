@@ -1,0 +1,1 @@
+cmd_/home/matos/cpp_levelup_homeworks/reverse_dev/dev/Module.symvers := sed 's/ko$$/o/' /home/matos/cpp_levelup_homeworks/reverse_dev/dev/modules.order | scripts/mod/modpost -m -a   -o /home/matos/cpp_levelup_homeworks/reverse_dev/dev/Module.symvers -e -i Module.symvers   -T -
